@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Cart Quantity</title>
+	<style>
+		button {
+			margin: 10px 5px;
+			padding: 5px 10px;
+		}
+	</style>
+</head>
+
+<body>
+	<button onclick="
+	displayCartQuantity();
+	">Show Quantity</button>
+
+	<button onclick="
+	updateCartQuantity(1)
+	">Add to Cart</button>
+
+	<button onclick="
+	updateCartQuantity(2);
+	">+2</button>
+
+	<button onclick="
+	updateCartQuantity(3);
+	">+3</button>
+
+	<!-- 5h exercises-->
+	<button onclick="
+	updateCartQuantity(4);
+	">+4</button>
+
+	<button onclick="
+	updateCartQuantity(5);
+	">+5</button>
+
+	<button onclick="
+	updateCartQuantity(-1);
+	">Remove from cart</button>
+
+	<button onclick="
+	updateCartQuantity(-2);
+	">-2</button>
+
+	<button onclick="
+	updateCartQuantity(-3);
+	">-3</button>
+	<!-- end -->
+	
+		<button onclick="
+	cartQuantity = 0;
+	displayCartQuantity();
+	">Reset Cart</button>
+
+	<!-- 9i -->
+	<p class="show-cost"></p>
+
+	<script>
+		let cartQuantity = 0;
+		
+		//9i
+		displayCartQuantity();
+		//7h
+		function updateCartQuantity(change) {
+			const showCost = document.querySelector('.show-cost');
+			if (cartQuantity + change > 10) {
+				alert('The cart is full');
+			}
+
+			if (cartQuantity + change < 0) {
+				alert('Not enough items in the cart');
+			}
+			
+			cartQuantity += change;
+			displayCartQuantity();
+		}
+		
+		//9i
+		function displayCartQuantity() {
+			document.querySelector('.show-cost').innerHTML = `Cart Quantity : ${cartQuantity}`
+		};
+	</script>
+</body>
+
+</html>

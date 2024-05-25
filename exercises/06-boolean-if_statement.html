@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Boolean and If-Statement</title>
+</head>
+
+<body>
+	<script>
+		//6a
+		const hour = 10;
+		//6b
+		const name = 'Leonardomanalu';
+		//6c
+		if (hour >= 6 && hour <= 12) {
+			console.log(`Good Morning ${name}`);
+		} else if (hour >= 13 && hour <= 17) {
+			console.log(`Good Afternoon ${name}`);
+		} else if (hour >= 18 && hour <= 23) {
+			console.log(`Good Night ${name}`);
+		}
+		
+		//6d using if, else if, else
+		const age1 = 6;
+		if (age1 <= 6) {
+			console.log(`because your ${age1} < 7th, you got a discount`);
+		} else if (age1 >= 65) {
+			console.log(`because your ${age1} year old, you got a discount`)
+		} else {
+			console.log(`Sorry you can't a discount`);
+		}
+		//6d using OR ( || )
+		const age2 = 2;
+		if (age2 <= 6 || age2 >= 65) {
+			console.log('Congrats');
+		} else {
+			console.log('Sorry')
+		}
+		//6d using ternary shortcut
+		const age3 = 5;
+		const discounOfAge = age3 <= 6 || age3 >= 65 ? `Because your age ${age3} years, you got a discount` : `Sorry you can't got a discount`
+		console.log(discounOfAge);
+		
+		//6e
+		const isHoliday = true;
+		const age4 = 10;
+		if ((age4 <= 6 || age4 >= 65) && !isHoliday) {
+			console.log('Discount')
+		} else {
+			console.log('No Discount')
+		}
+	</script>
+	<a href="/challenge-exercises/coin-flip-game.html">Continue for exercise 6f</a>
+</body>
+
+</html>

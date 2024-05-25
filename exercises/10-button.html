@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Button</title>
+	<link rel="stylesheet" href="styles/10-button.css">
+</head>
+
+<body>
+	<!-- 10a -->
+	<button class="add-cart">Add to cart</button> <br>
+
+	<!-- 10b -->
+	<button class="request">Request now</button> <br>
+
+	<!-- 10c -->
+	<button class="schedule">Schedule for later</button> <br>
+
+	<!-- 10d -->
+	<button onclick="btnClick(this);" class="gaming">Gaming</button>
+
+	<!-- 10e -->
+	<button onclick="btnClick(this);" class="music">Music</button>
+
+	<!-- 10f -->
+	<button onclick="btnClick(this);" class="tech">Tech</button>
+
+	<script>
+		function btnClick(button) {
+			if (button.classList.contains('on')) {
+				button.classList.remove('on');
+			} else {
+				button.classList.add('on');
+			}
+		}
+	</script>
+</body>
+
+</html>

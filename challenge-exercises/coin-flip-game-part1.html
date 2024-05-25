@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+
+<body>
+	<p>Let's see in the console</p>
+	<script>
+		//6f continue from exercises 06
+		const randomNumber = Math.random();
+		let result = '';
+		if (randomNumber < 0.5) {
+			result = 'Heads';
+		} else {
+			result = 'Tails';
+		}
+		console.log(result);
+		
+		const guess = 'Heads' //or 'Tails'
+		const resultGuess = guess === result ? `You win.` : `You lose.`
+		console.log(resultGuess);
+	</script>
+</body>
+
+</html>

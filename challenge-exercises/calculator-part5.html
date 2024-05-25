@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Calculator</title>
+	<link rel="stylesheet" href="styles/calculator-part5.css">
+</head>
+
+<body>
+	<p class="display-calculator"></p>
+	<p>
+		<button onclick="
+			updateCalculation('1')
+		" class="btn-number">1</button>
+		<button onclick="
+			updateCalculation('2');
+		" class="btn-number">2</button>
+		<button onclick="
+			updateCalculation('3');
+		" class="btn-number">3</button>
+		<button onclick="
+			updateCalculation(' + ');
+		" class="btn-operator">+</button>
+	</p>
+	<p>
+		<button onclick="
+			updateCalculation('4');
+			" class="btn-number">4</button>
+		<button onclick="
+			updateCalculation('5');
+			" class="btn-number">5</button>
+		<button onclick="
+			updateCalculation('6');
+			" class="btn-number">6</button>
+		<button onclick="
+			updateCalculation(' - ');
+			" class="btn-operator">-</button>
+	</p>
+	<p>
+		<button onclick="
+			updateCalculation('7');
+				" class="btn-number">7</button>
+		<button onclick="
+			updateCalculation('8');
+				" class="btn-number">8</button>
+		<button onclick="
+			updateCalculation('9');
+				" class="btn-number">9</button>
+		<button onclick="
+			updateCalculation(' * ');
+				" class="btn-operator">*</button>
+	</p>
+	<p>
+		<button onclick="
+			updateCalculation('0');
+				" class="btn-number">0</button>
+		<button onclick="
+			updateCalculation('.');
+				" class="btn-number">.</button>
+		<button onclick="
+			calculation = eval(calculation);
+			displayCalculator();
+			localStorage.setItem('calculation', calculation);
+				" class="btn-number">=</button>
+		<button onclick="
+			updateCalculation(' / ');
+				" class="btn-operator">/</button>
+	</p>
+	<p>
+		<button onclick="
+		calculation = '';
+		displayCalculator();
+		
+		localStorage.setItem('calculation', calculation);
+		" class="btn-number">Clear</button>
+	</p>
+
+	<script>
+		let calculation = localStorage.getItem('calculation') || '';
+
+		displayCalculator();
+
+		//7j
+		function updateCalculation(value) {
+			calculation += value;
+			displayCalculator();
+			localStorage.setItem('calculation', calculation);
+		};
+
+		//9j
+		function displayCalculator() {
+			document.querySelector('.display-calculator').innerHTML = calculation
+		};
+	</script>
+</body>
+
+</html>

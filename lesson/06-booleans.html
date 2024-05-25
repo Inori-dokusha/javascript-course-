@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Booleans</title>
+</head>
+
+<body>
+	<script>
+		/*
+		console.log(typeof true);
+		console.log(typeof false);
+
+		console.log(3 > 5 - 5);
+
+		console.log(5 == '5.00');
+
+		console.log(5 === '5.00');
+		//syntax if-statement
+		if (false) {
+			console.log('Hello'); //branches
+		} else {
+			console.log('else'); //branches
+		}
+
+		const age = 15;
+	
+		if (age >= 16) {
+			console.log('You can drive');
+			console.log('Congrats');
+		} else if (age >= 14) {
+			console.log('Almost there!');
+		} else {
+			console.log('You can not drive');
+		}
+		
+		console.log(true && false);
+		console.log(0.2 >= 0 && 0.2 < 1 / 3);
+		
+		console.log(true || false);//output true
+		console.log(!true);//output false
+		*/
+
+		/*
+		if (0) {
+			console.log('truthy');
+		}
+		
+		const cartQuantity = 5;
+		
+		if (cartQuantity) {
+			console.log('cart has products');
+		}
+		
+		console.log(!0);//true
+		
+		console.log('text' / 5);//NaN
+		
+		let variable1;
+		console.log(variable1);//undefined
+		*/
+
+
+		//syntax ternary
+		//condition ? expr1 : expr2
+		const result = 0 ? 'truthy' : 'falsy';
+		console.log(result);
+
+		true && console.log('Hello');
+
+		const message = 5 && NaN;
+		console.log(message);
+		
+		//syntax guard
+		const currency = undefined || 'USD';
+		console.log(currency);
+	</script>
+</body>
+
+</html>

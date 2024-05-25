@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>DOM Project</title>
+	<style>
+		body {
+			font-family: Arial;
+		}
+
+		.subscribe-button {
+			border: none;
+			background-color: black;
+			color: white;
+			padding: 10px 15px;
+			border-radius: 20px;
+			font-weight: bold;
+			cursor: pointer;
+			margin-bottom: 30px;
+		}
+
+		.is-subscribed {
+			background-color: rgb(240, 240, 240);
+			color: black;
+		}
+
+		.cost-input {
+			font-size: 15px;
+			padding: 10px;
+		}
+
+		.calculate-button {
+			background-color: green;
+			color: white;
+			border: none;
+			font-size: 15px;
+			padding: 12px 15px;
+			cursor: pointer;
+		}
+
+		.error {
+			color: red;
+		}
+	</style>
+
+<body>
+	<p>Amazon Shiping Caculator</p>
+	<input type="text" placeholder="Cost or order" class="js-cost-input cost-input" onkeydown="handleCostKeydown(event);
+	">
+
+	<button onclick="
+	 calculateTotal();
+	" class="calculate-button">Calculate</button>
+
+	<p class="js-total-cost"></p>
+	<p class="error-message error"></p>
+
+	<script>
+		function handleCostKeydown(event) {
+			if (event.key === 'Enter') {
+				calculateTotal();
+			};
+		}
+
+		function calculateTotal() {
+			const inputElement = document.querySelector('.js-cost-input');
+			let cost = Number(inputElement.value);
+
+			document.querySelector('.js-total-cost').innerHTML = '';
+			document.querySelector('.error-message').innerHTML = '';
+
+			if (cost < 0) {
+				document.querySelector('.error-message').innerHTML = `Error: cost cannot be lass than $0`
+				return;
+			}
+
+			if (cost < 40) {
+				cost += 10;
+			}
+
+			document.querySelector('.js-total-cost').innerHTML = `$${cost}`;
+		}
+	</script>
+</body>
+
+</html>

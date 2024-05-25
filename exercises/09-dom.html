@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>DOM</title>
+</head>
+
+<body>
+	<!-- 9a -->
+	<button>9a</button>
+
+	<!-- 9b -->
+	<button onclick="
+	change();
+	" class="button-element">9b</button>
+
+	<!-- 9c -->
+	<p>
+		<button onclick="
+		document.querySelector('.result-btn').innerHTML = 'You chose: heads';
+	">heads</button>
+
+		<button onclick="
+	document.querySelector('.result-btn').innerHTML = 'You chose: tails';
+	">tails</button>
+
+	<p class="result-btn"></p>
+	</p>
+
+	<!-- 9d -->
+	<input type="text" class="input-element" onkeydown="displayName(event);">
+	<button onclick="
+	displayName();
+	" class="btn-submit">Submit</button>
+	<p class="result-display"></p>
+
+	<script>
+		//9a
+		console.log(document.querySelector('button'));
+
+		//9b
+		function change() {
+			const btnElement = document.querySelector('.button-element');
+			if (btnElement.innerText === '9b') {
+				btnElement.innerHTML = '9b done!';
+			} else {
+				btnElement.innerHTML = '9b';
+			}
+		};
+		
+		//9e
+		function keyDown(event) {
+			if (event.key === 'Enter') {
+				displayName(event);
+			}
+		};
+		
+		//9d
+		function displayName() {
+			const text = document.querySelector('.input-element').value;
+			const result = document.querySelector('.result-display');
+			result.innerHTML = `Your name is: ${text}`
+		};
+	</script>
+</body>
+
+</html>
