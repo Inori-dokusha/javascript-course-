@@ -104,11 +104,87 @@ console.log(countPositive([1, -3, 5]));
 */
 
 //11o
-let array = ['Hello', 'World', 'good'];
-for (let i = 0; i < array.length; i++) {
-	if (array[i] === 'search') {
-		console.log(`search + 1`);
-	} else if (!array['search']) {
-		console.log(-1);
+/*
+let words = ['Hello', 'World', 'search', 'good'];
+let index = 1;
+for (let i = 0; i < words.length; i++) {
+	if (words[i] === 'search') {
+		index = i;
+		//11p
+		break;
 	}
 }
+console.log(index);
+
+words = ['not', 'found'];
+index = -1;
+for (let i = 0; i < words.length; i++) {
+	if (words[i] === 'search') {
+		index = i;
+		break;
+
+	}
+}
+console.log(index);
+*/
+
+//11q
+function findIndex(array, word) {
+	for (let i = 0; i < array.length; i++) {
+		if (array[i] === word) {
+			return i;
+		}
+	}
+	return -1;
+}
+console.log(findIndex(['green', 'red', 'blue', 'red'], 'red'));
+console.log(findIndex(['green', 'red', 'blue', 'red'], 'yellow'));
+
+/*
+//11r
+function removeEgg(foods) {
+	let result = [];
+	for (var i = 0; i < foods.length; i++) {
+		if (foods[i] === 'egg') {
+			continue;
+		}
+		result.push(foods[i]);
+	}
+	return result;
+}
+console.log(removeEgg(['egg', 'apple', 'egg', 'egg', 'ham']));
+*/
+
+/*
+//11s update from 11r
+function removeEgg(foods) {
+	let result = [];
+	let eggRemoved = 0;
+	for (var i = 0; i < foods.length; i++) {
+		if (foods[i] === 'egg' && eggRemoved < 2) {
+			eggRemoved++;
+			continue;
+		}
+		result.push(foods[i]);
+	}
+	return result;
+}
+console.log(removeEgg(['egg', 'apple', 'egg', 'egg', 'ham']));
+*/
+
+//11t
+function removeEgg(foods) {
+	const foodscopy = foods.slice();
+	const reverseFoods = foodscopy.reverse();
+	const result = [];
+	let eggRemoved = 0;
+	for (var i = 0; i < foods.length; i++) {
+		if (foods[i] === 'egg' && eggRemoved < 2) {
+			eggRemoved++;
+			continue;
+		}
+		result.push(reverseFoods[i]);
+	}
+	return result.reverse();
+}
+console.log(removeEgg(['egg', 'apple', 'egg', 'egg', 'ham']));
